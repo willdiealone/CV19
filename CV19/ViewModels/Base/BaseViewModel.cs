@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace CV19.ViewModels.Base
 { 
-    internal abstract class BaseViewModel : INotifyPropertyChanged
+    internal abstract class BaseViewModel : INotifyPropertyChanged,IDisposable
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;        
 
         protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = null)
         {
@@ -23,6 +23,17 @@ namespace CV19.ViewModels.Base
             field = value;
             OnPropertyChanged(propertyName);
             return true;
-        }                
+        }
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+        private bool _Disposed;
+        protected void Dispose(bool  Disposing)
+        {
+            if (!Disposing || _Disposed) return;
+            _Disposed = true;
+            //Освобождение управляемых ресурсов
+        }
     }
 }
