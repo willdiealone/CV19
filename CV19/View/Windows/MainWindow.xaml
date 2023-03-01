@@ -13,13 +13,13 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header ="Файл">
-                <MenuItem Header="Выход"></MenuItem>
+                <MenuItem Header="Выход" Command=" "></MenuItem>
             </MenuItem>
             <MenuItem Header="Помощь "></MenuItem>
         </Menu>
             <StatusBar DockPanel.Dock ="Bottom">
             <StatusBarItem MinHeight="10" MaxWidth="50">
-                <TextBlock Text="1234567"/>
+                <TextBlock Text="{Binding Status}"/>
             </StatusBarItem>
             <ProgressBar Height="20" Width="200" Value="55"/>
         </StatusBar>

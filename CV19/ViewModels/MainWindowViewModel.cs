@@ -12,5 +12,10 @@ namespace CV19.ViewModels
         public string Title { get; set; } = "Анализ статистики CV19";
 
         #endregion
+
+        /// <summary>
+        /// Статус программы 
+        /// </summary>
+        public string Status { get; set; } = "Готов!";
     }
 }
