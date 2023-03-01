@@ -10,15 +10,36 @@
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
-    <Grid>
-        <TextBox
-            VerticalAlignment="Top"
-            HorizontalAlignment="Left"
-            Height="20"
-            Width="140"
-            Margin ="20"
-            Text="{Binding Title,UpdateSourceTrigger=PropertyChanged}"
-            />
-
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header ="Файл">
+                <MenuItem Header="Выход"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Помощь "></MenuItem>
+        </Menu>
+            <StatusBar DockPanel.Dock ="Bottom">
+            <StatusBarItem MinHeight="10" MaxWidth="50">
+                <TextBlock Text="1234567"/>
+            </StatusBarItem>
+            <ProgressBar Height="20" Width="200" Value="55"/>
+        </StatusBar>
+        <TabControl>
+            <TabItem Header="Вкладка 1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="29*"/>
+                        <RowDefinition Height="165*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="157*"/>
+                        <ColumnDefinition Width="637*"/> 
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Grid.Row="0" Fill="Blue" Stroke="Red" StrokeThickness="2" RadiusX="7" RadiusY="7"/>
+                    <Ellipse Grid.Column="1" Grid.Row="0" Fill="LightPink" Stroke="LightSeaGreen" StrokeThickness="2 "/>
+                    <GridSplitter Grid.RowSpan="2" Grid.Column="0" HorizontalAlignment="Right" Width="4"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="В кладка 2"></TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>
