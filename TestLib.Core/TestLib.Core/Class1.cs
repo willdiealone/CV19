@@ -18,8 +18,5 @@ namespace TestLib.Fromework
         public abstract bool CanExecute(object parameter);
 
         public abstract void Execute(object parameter);
-
-
-
     }
 }
